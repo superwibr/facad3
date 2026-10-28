@@ -1,0 +1,41 @@
+/* =========================================
+   BASE PRIMITIVES
+   ========================================= */
+
+.fcd3-plane {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    /* Dimensions */
+    --w: 100px;
+    --h: 100px;
+
+    --x: 0px;
+    --y: 0px;
+    --z: 0px;
+    --rx: 0deg;
+    --ry: 0deg;
+    --rz: 0deg;
+    
+    /* Appearance */
+    --color: #ffffff;
+    --opacity: 1;
+
+    width: var(--w);
+    height: var(--h);
+    background-color: var(--color);
+    opacity: var(--opacity);
+    
+    /* Center the element on its own axis */
+    margin-left: calc(var(--w) / -2);
+    margin-top: calc(var(--h) / -2);
+    
+    transform-style: preserve-3d;
+    backface-visibility: hidden; /* Hidden by default for performance */
+    
+    transform: translate3d(var(--x), var(--y), var(--z)) 
+               rotateX(var(--rx)) 
+               rotateY(var(--ry)) 
+               rotateZ(var(--rz));
+}

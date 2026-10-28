@@ -1,0 +1,18 @@
+/**
+ * BILLBOARD: Always faces the camera 
+ * Add to stuff like planes
+ */
+
+/* rotates around y to face camera */
+.fcd3-billboard {
+    transform: translate3d(var(--x), var(--y), var(--z)) 
+               rotateY(calc(-1 * var(--cam-ry, 0deg)));
+}
+
+/* Freely rotates around xyz to face camera */
+.fcd3-billboard-free {
+    transform: translate3d(var(--x), var(--y), var(--z)) 
+               rotateZ(calc(-1 * var(--cam-rz, 0deg))) 
+               rotateY(calc(-1 * var(--cam-ry, 0deg))) 
+               rotateX(calc(-1 * var(--cam-rx, 0deg)));
+}

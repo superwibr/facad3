@@ -1,0 +1,41 @@
+.fcd3-viewport {
+    transform-box: border-box;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+
+    /* Rotation */
+    --cam-rx: 0deg;
+    --cam-ry: 0deg;
+    --cam-rz: 0deg;
+
+    /* Position */
+    --cam-x: 0px;
+    --cam-y: 0px;
+    --cam-z: 0px;
+
+    /* Transform origin */
+    --cam-pivot-x: 50%;
+    --cam-pivot-y: 50%;
+    --cam-pivot-z: 0px;
+}
+
+.fcd3-camera {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+
+    transform-origin: var(--cam-pivot-x, 50%) var(--cam-pivot-y, 50%) var(--cam-pivot-z, 0px);
+
+    transform: 
+        rotateX(var(--cam-rx, 0deg))
+        rotateY(var(--cam-ry, 0deg))
+        rotateZ(var(--cam-rz, 0deg));
+}
+
+.fcd3-scene {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+
+    transform: translate3d(var(--cam-x, 0px), var(--cam-y, 0px), var(--cam-z, 0px));
+}
