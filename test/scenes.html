@@ -175,12 +175,12 @@
             <div class="fcd3-camera">
                 <div class="fcd3-scene">
                     <!-- Ground -->
-                    <div class="fcd3-plane ground"></div>
+                    <div class="fcd3-plane ground fcd3-double-sided"></div>
                     <!-- Forest Pillars -->
-                    <div class="fcd3-plane pillar" style="--x: -150px; --z: 100px; --y: -75px;"></div>
-                    <div class="fcd3-plane pillar" style="--x: 100px; --z: -50px; --y: -75px; --ry: 45deg;"></div>
-                    <div class="fcd3-plane pillar" style="--x: -50px; --z: -150px; --y: -75px; --ry: -30deg;"></div>
-                    <div class="fcd3-plane pillar" style="--x: 200px; --z: 150px; --y: -75px; --ry: 15deg;"></div>
+                    <div class="fcd3-plane pillar fcd3-double-sided" style="--x: -150px; --z: 100px; --y: -75px;"></div>
+                    <div class="fcd3-plane pillar fcd3-double-sided" style="--x: 100px; --z: -50px; --y: -75px; --ry: 45deg;"></div>
+                    <div class="fcd3-plane pillar fcd3-double-sided" style="--x: -50px; --z: -150px; --y: -75px; --ry: -30deg;"></div>
+                    <div class="fcd3-plane pillar fcd3-double-sided" style="--x: 200px; --z: 150px; --y: -75px; --ry: 15deg;"></div>
                 </div>
             </div>
         </div>
@@ -209,18 +209,18 @@
         <div id="scene2" class="fcd3-viewport" style="--cam-pivot-z: -600px; --cam-z: -600px; --cam-y: 200px">
             <div class="fcd3-camera">
                 <div class="fcd3-scene">
-                    <div class="fcd3-plane ground"></div>
-                    <div class="fcd3-plane pillar" style="--x: -150px; --z: 100px; --y: -75px;"></div>
-                    <div class="fcd3-plane pillar" style="--x: 100px; --z: -50px; --y: -75px;"></div>
+                    <div class="fcd3-plane ground fcd3-double-sided"></div>
+                    <div class="fcd3-plane pillar fcd3-double-sided" style="--x: -150px; --z: 100px; --y: -75px;"></div>
+                    <div class="fcd3-plane pillar fcd3-double-sided" style="--x: 100px; --z: -50px; --y: -75px;"></div>
 
                     <!-- Base Billboard (Stays upright) -->
-                    <div class="fcd3-plane fcd3-billboard fcd3-double-sided sign"
+                    <div class="fcd3-plane fcd3-billboard sign"
                         style="--x: 0px; --y: -90px; --z: 50px;">
                         BASE (Y-AXIS)
                     </div>
 
                     <!-- Free Billboard (Faces camera directly) -->
-                    <div class="fcd3-plane fcd3-billboard-free fcd3-double-sided popup"
+                    <div class="fcd3-plane fcd3-billboard-free popup"
                         style="--x: -200px; --y: -100px; --z: -100px;">
                         FREE
                     </div>
@@ -252,16 +252,16 @@
             <div class="fcd3-camera">
                 <div class="fcd3-scene">
                     <!-- The 6 faces of the die. Notice how --explode is added to their base positions -->
-                    <div class="fcd3-plane die-face" style="--z: calc(50px + var(--explode)); color: #e74c3c;">1</div>
-                    <div class="fcd3-plane die-face"
+                    <div class="fcd3-plane die-face fcd3-double-sided" style="--z: calc(50px + var(--explode)); color: #e74c3c;">1</div>
+                    <div class="fcd3-plane die-face fcd3-double-sided"
                         style="--z: calc(-50px - var(--explode)); --ry: 180deg; color: #2ecc71;">2</div>
-                    <div class="fcd3-plane die-face"
+                    <div class="fcd3-plane die-face fcd3-double-sided"
                         style="--x: calc(50px + var(--explode)); --ry: 90deg; color: #3498db;">3</div>
-                    <div class="fcd3-plane die-face"
+                    <div class="fcd3-plane die-face fcd3-double-sided"
                         style="--x: calc(-50px - var(--explode)); --ry: -90deg; color: #f1c40f;">4</div>
-                    <div class="fcd3-plane die-face"
+                    <div class="fcd3-plane die-face fcd3-double-sided"
                         style="--y: calc(-50px - var(--explode)); --rx: 90deg; color: #9b59b6;">5</div>
-                    <div class="fcd3-plane die-face"
+                    <div class="fcd3-plane die-face fcd3-double-sided"
                         style="--y: calc(50px + var(--explode)); --rx: -90deg; color: #34495e;">6</div>
                 </div>
             </div>
