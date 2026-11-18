@@ -6,13 +6,17 @@
 /* rotates around y to face camera */
 .fcd3-billboard {
     transform: translate3d(var(--x), var(--y), var(--z)) 
-               rotateY(calc(-1 * var(--cam-ry, 0deg)));
+               rotateY(calc(var(--ry) + -1 * var(--cam-ry, 0deg)));
 }
 
 /* Freely rotates around xyz to face camera */
 .fcd3-billboard-free {
     transform: translate3d(var(--x), var(--y), var(--z)) 
-               rotateZ(calc(-1 * var(--cam-rz, 0deg))) 
-               rotateY(calc(-1 * var(--cam-ry, 0deg))) 
-               rotateX(calc(-1 * var(--cam-rx, 0deg)));
+               rotateZ(calc(var(--rz) + -1 * var(--cam-rz, 0deg))) 
+               rotateY(calc(var(--ry) + -1 * var(--cam-ry, 0deg))) 
+               rotateX(calc(var(--rx) + -1 * var(--cam-rx, 0deg)));
+}
+
+.fcd3-double-sided {
+    backface-visibility: visible;
 }
