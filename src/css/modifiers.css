@@ -1,3 +1,10 @@
+/* Add to any rotated parent object/plane that contains a billboard child */
+.fcd3-anchor {
+    --p-rx: var(--rx);
+    --p-ry: var(--ry);
+    --p-rz: var(--rz);
+}
+
 /**
  * BILLBOARD: Always faces the camera 
  * Add to stuff like planes
@@ -5,16 +12,35 @@
 
 /* rotates around y to face camera */
 .fcd3-billboard {
-    transform: translate3d(var(--x), var(--y), var(--z)) 
-               rotateY(calc(var(--ry) + -1 * var(--cam-ry, 0deg)));
+    transform:
+        translate3d(var(--x), var(--y), var(--z))
+        /* Undo parent rotation */
+        rotateZ(calc(-1 * var(--p-rz, 0deg)))
+        rotateY(calc(-1 * var(--p-ry, 0deg)))
+        rotateX(calc(-1 * var(--p-rx, 0deg)))
+        /* Undo camera roll & yaw, but keep camera pitch (--cam-rx) so it stays upright */
+        rotateZ(calc(-1 * var(--cam-rz, 0deg)))
+        rotateY(calc(-1 * var(--cam-ry, 0deg)))
+        /* Apply optional local Y rotation */
+        rotateY(var(--ry));
 }
 
 /* Freely rotates around xyz to face camera */
 .fcd3-billboard-free {
-    transform: translate3d(var(--x), var(--y), var(--z)) 
-               rotateZ(calc(var(--rz) + -1 * var(--cam-rz, 0deg))) 
-               rotateY(calc(var(--ry) + -1 * var(--cam-ry, 0deg))) 
-               rotateX(calc(var(--rx) + -1 * var(--cam-rx, 0deg)));
+    transform:
+        translate3d(var(--x), var(--y), var(--z))
+        /* Undo parent rotation in reverse order */
+        rotateZ(calc(-1 * var(--p-rz, 0deg)))
+        rotateY(calc(-1 * var(--p-ry, 0deg)))
+        rotateX(calc(-1 * var(--p-rx, 0deg)))
+        /* Undo camera rotation in reverse order */
+        rotateZ(calc(-1 * var(--cam-rz, 0deg)))
+        rotateY(calc(-1 * var(--cam-ry, 0deg)))
+        rotateX(calc(-1 * var(--cam-rx, 0deg)))
+        /* Apply optional local rotations */
+        rotateX(var(--rx))
+        rotateY(var(--ry))
+        rotateZ(var(--rz));
 }
 
 .fcd3-double-sided {
